@@ -1,0 +1,53 @@
+<mvc:View controllerName="ElementBinding.Element_Binding.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<!--<Table items="{details>/Employees}" itemPress= "getEmpData" id="myTablesID" mode="SingleSelectMaster" >
+						<columns>
+							<Column>
+								<Text text="UserId"/>
+							</Column>
+							<Column>
+								<Text text="Preferred FullName"/>
+							</Column>
+							<Column>
+								<Text text="Phone Number"/>
+							</Column>
+							<Column>
+								<Text text="Email Address"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active">
+								<cells >
+									<Text text="{details>userId}" ></Text>
+									<Text text="{details>preferredFullName}"></Text>
+									<Text text="{details>phoneNumber}"></Text>
+									<Text text="{details>emailAddress}"></Text>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>-->
+					<List mode="Delete" delete="onDelete" items="{path:'details>/Employees'}" itemPress="getEmpData" id="myTablesID">
+						<items type="active">
+							<ObjectListItem  title="{details>userId}" type="Active" number="{details>phoneNumber}" numberUnit="{details>emailAddress}">
+								
+							</ObjectListItem>
+						</items>
+					</List>
+					<Panel id="myPanel" headerText="Product Details" visible="false">
+							<l:Grid>
+								<Text text="{details>userId}"/>
+								<Text text="{details>preferredFullName}"/>
+								<Text text="{details>phoneNumber}"/>
+								<Text text="{details>emailAddress}"/>
+							</l:Grid>
+						
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
